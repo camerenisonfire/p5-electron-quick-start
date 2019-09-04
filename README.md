@@ -1,18 +1,12 @@
-# electron-quick-start
+# p5-electron-quick-start
 
-**Clone and run for a quick way to see Electron in action.**
+**Clone and run for a quick way to use P5js in Electron.**
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
+This quick start template allows you to quickly begin building P5js sketches in Electron. In addition to P5 and Electron, it comes pre-configured with:
+- Mocha as the Node.js test suite.
+- Electron-reload to keep the sketch up-to-date as you make changes.
 
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
-
-A basic Electron application needs just these files:
-
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
-
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
+In order to keep P5 out of the global scope, it is instantiated inside sketch.js. This means that whenever you would call a p5 method, you must call it from the injected p5 instance. For example, in the sketch function, you must use `p.ellipse()` rather than just `ellipse`.
 
 ## To Use
 
@@ -31,14 +25,27 @@ npm start
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
+## To Test
+This quick start template employs [MochaJS](https://mochajs.org) as the test framework. To run tests inside the `test` folder from your command line:
+
+```bash
+# Install dependencies
+npm install
+# Run the tests
+npm test
+```
+
+## Resource for Learning P5
+- [p5js.org/learn](https://p5js.org/learn/) - excellent tutorials on using p5
+- [p5js.org/reference](https://p5js.org/reference/) - API documentation
+- [p5js.org/examples/](https://p5js.org/examples/) - dozens of sketch examples
+- [Processing Foundation Forum](https://discourse.processing.org/categories) - forums for p5
+
 ## Resources for Learning Electron
 
 - [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
 - [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
 - [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
 
 ## License
 
